@@ -1,27 +1,5 @@
-# MechaCar Statistical Analysis Using R
 
-## Linear Regression to Predict MPG
-I designed a linear model that predicts the mpg of MechaCar prototypes using several variables including vehicle length, weight, spoiler angle, drivetrain and ground clearance. To create the linear regression, I read the data csv file, used the lm() function to create the linear regression, and used the summary() function to produce the summary statistics.
-
-```
-library(dplyr)
-
-MechaCarData <- read.csv(file='MechaCar_mpg.csv',check.names=F,stringsAsFactors=F)
-
-lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=MechaCarData)
-
-summary(lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_clearance + AWD,data=MechaCarData))
-```
-
-The script produced the following analysis:
-
-![Linear Regression MPG](/Resources/linreg_mpg.PNG)
-
- - The variables that provided a non-random amount of variance to the mpg values in the dataset were "vehicle_length" and "ground_clearance."
- - The p-value (5.35e-11) is much smaller than a significance level of 0.01 and is therefore highly significant. This means that the slope of the linear model is not considered to be zero because the statistical analysis provides sufficient evidence that the null hypothesis is not true.
- - The linear model does predict mpg of MechaCar prototypes effectively as the r-squared value is 0.7149. This means that there is about a 71.5% chance that future data will be able to fit this model.
-
-## Summary Statistics on Suspension Coils
+## Linear Regression to Predict 
 Using the dataset on suspension coils, I created a summary statistics table showing the suspension coil's PSI continuous variable across all manufacturing lots and the PSI metrics for each lot. To accomplish this, I first read the data csv file, created the summary table for all the manufacturing lots (the total_summary table), and then grouped the table by the manufacturing lot to produce the table for each lot (the lot_summary table).
 
 ```
@@ -85,5 +63,5 @@ T-Test for Lot 3
 
 The t-test for Lot 3 had a p-value of 0.04, meaning that there is enough evidence to reject the null hypothesis. Therefore, the mean PSI of Lot 3 is statistically different from the population mean of 1,500 pounds per square inch.
 
-## Study Design: MechaCar vs Competition
-One of the most important factors that consumers consider when looking for a new car is the safety rating. It would be useful to perform a statistical study to compare the safety ratings of MechaCar vehicles against the safety ratings of vehicles from other manufacturers. The null hypothesis would be that MechaCar vehicles do not have statistically significant higher safety ratings than that of vehicles from other manufacturers, while the alternative hypothesis would be that MechaCar vehicles do have statistically significant higher safety ratings than that of vehicles from other manufacturers. The way to test this would be to use a one-tailed t-test which would determine if there is any difference between the groups being compared. We would not use a two-tailed t-test as we have a prediction about the direction of the difference. The data needed to run the statistical test is a table of MechaCar vehicles and their respective safety ratings, along with various other manufactureres and their cars with safety ratings.
+# Study Design
+ It would be useful to perform a statistical study to compare the safety ratings of MechaCar vehicles against the safety ratings of vehicles from other manufacturers. The null hypothesis would be that MechaCar vehicles do not have statistically significant higher safety ratings than that of vehicles from other manufacturers, while the alternative hypothesis would be that MechaCar vehicles do have statistically significant higher safety ratings than that of vehicles from other manufacturers. 
